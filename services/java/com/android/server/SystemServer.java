@@ -390,6 +390,8 @@ public final class SystemServer implements Dumpable {
     private static final String GAME_MANAGER_SERVICE_CLASS =
             "com.android.server.app.GameManagerService$Lifecycle";
     private static final String UWB_SERVICE_CLASS = "com.android.server.uwb.UwbService";
+    private static final String SLEEP_MODE_SERVICE_CLASS =
+            "com.android.server.power.SleepModeService";
 
     private static final String TETHERING_CONNECTOR_CLASS = "android.net.ITetheringConnector";
 
@@ -2705,6 +2707,9 @@ public final class SystemServer implements Dumpable {
 
         t.traceBegin("AppCompatOverridesService");
         mSystemServiceManager.startService(APP_COMPAT_OVERRIDES_SERVICE_CLASS);
+        t.traceEnd();
+         t.traceBegin("SleepModeService");
+        mSystemServiceManager.startService(SLEEP_MODE_SERVICE_CLASS);
         t.traceEnd();
 
         // These are needed to propagate to the runnable below.
