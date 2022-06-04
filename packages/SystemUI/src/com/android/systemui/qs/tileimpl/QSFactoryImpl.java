@@ -134,6 +134,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<FPSInfoTile> mFPSInfoTileProvider;
     private final Provider<CompassTile> mCompassTileProvider;
     private final Provider<CPUInfoTile> mCPUInfoTileProvider;
+    private final Provider<SleepModeTile> mSleepModeTileProvider;
     private final Provider<SoundSearchTile> mSoundSearchTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
@@ -191,7 +192,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<FPSInfoTile> fpsInfoTileProvider,
             Provider<CompassTile> compassTileProvider,
             Provider<CPUInfoTile> cpuInfoTileProvider,
-            Provider<SoundSearchTile> soundSearchTileProvider) {
+            Provider<SoundSearchTile> soundSearchTileProvider)
+            Provider<SleepModeTile> sleepModeTileProvider) {
         mQsHostLazy = qsHostLazy;
         mCustomTileBuilderProvider = customTileBuilderProvider;
 
@@ -244,6 +246,7 @@ public class QSFactoryImpl implements QSFactory {
         mCompassTileProvider = compassTileProvider;
         mCPUInfoTileProvider = cpuInfoTileProvider;
         mSoundSearchTileProvider = soundSearchTileProvider;
+        mSleepModeTileProvider = sleepModeTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -354,6 +357,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mCPUInfoTileProvider.get();
             case "soundsearch":
                 return mSoundSearchTileProvider.get();
+                case "sleep_mode":
+                return mSleepModeTileProvider.get();
         }
         // Custom tiles
         if (tileSpec.startsWith(CustomTile.PREFIX)) {
