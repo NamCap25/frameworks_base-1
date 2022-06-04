@@ -171,6 +171,7 @@ import com.android.server.policy.PermissionPolicyService;
 import com.android.server.policy.PhoneWindowManager;
 import com.android.server.policy.role.RoleServicePlatformHelperImpl;
 import com.android.server.power.PowerManagerService;
+import com.android.server.power.SleepModeService;
 import com.android.server.power.ShutdownThread;
 import com.android.server.power.ThermalManagerService;
 import com.android.server.power.hint.HintManagerService;
