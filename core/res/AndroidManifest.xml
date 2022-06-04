@@ -709,6 +709,10 @@
     <protected-broadcast android:name="android.app.action.ACTION_SHOW_NEW_USER_DISCLAIMER" />
 
     <!-- Evolution X additions -->
+    
+     <!-- Sleep Mode -->
+    <protected-broadcast android:name="android.intent.action.SLEEP_MODE_TURN_OFF" />
+
 
     <!-- Gaming Mode -->
     <protected-broadcast android:name="exthmui.intent.action.GAMING_MODE_ON" />
